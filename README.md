@@ -1,6 +1,5 @@
 ![2text](https://github.com/user-attachments/assets/3e9cd153-8607-4e09-a38f-74cd4975973b)
-
-# ✨🪐 SPACE UAY 🪐✨  
+ 
 **Seu novo lar pode estar a anos-luz de distância. E a gente te leva até lá.**  
 
 ![banner](https://via.placeholder.com/800x200.png?text=Space+Uay+-+Real+Estate+Espacial+2000s+Style)
@@ -86,9 +85,10 @@ Organizamos os atributos de qualidade em níveis de importância para o Space Ua
 
 | Tripulante | Cargo |
 |------------|-------|
-| Você | Capitão de testes |
-| Fulano | Engenheiro galáctico |
-| Sicrana | Designer orbital |
+| Lucas De Azevedo | Capitão de testes |
+| Gabriel Henrique | Engenheiro galáctico |
+| Amanda Cristina | Designer orbital |
+| Pedro Lucas | Designer orbital |
 
 ---
 
@@ -100,7 +100,7 @@ Fale com nossa central interplanetária:
 
 ---
 
-> _Space Uay™ - O futuro da moradia está logo ali na Nebulosa de Órion._  
+> _Space Uay™ - O futuro da moradia está logo ali no MekiMeki._  
 > “2000 was the future. 2025 is retro.”
 
 ---
