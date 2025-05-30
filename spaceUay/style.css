@@ -1,91 +1,97 @@
+/* Fundo cósmico escuro com estrelas */
 body {
-    background: linear-gradient(to bottom, #d4f0ff, #c0e0f5);
-    font-family: Verdana, Arial, sans-serif;
-    color: #003366;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 80%;
-    margin: auto;
-    border: 1px solid #88bdda;
-    background-color: #ffffffcc;
-    box-shadow: 0 0 10px #88bdda;
-  }
-  
-  header img {
-    width: 100%;
-    border-bottom: 2px solid #88bdda;
-  }
-  
-  .navbar {
-    background: linear-gradient(to right, #a0c4de, #e0f5ff);
-    border-bottom: 2px solid #88bdda;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .navbar a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #003366;
-    font-weight: bold;
-  }
-  
-  .main-content {
-    width: 100%;
-  }
-  
-  .sidebar {
-    width: 25%;
-    background-color: #f0fbff;
-    padding: 15px;
-    vertical-align: top;
-    border-right: 1px solid #88bdda;
-  }
-  
-  .sidebar h3 {
-    margin-top: 0;
-  }
-  
-  .sidebar ul {
-    list-style-type: square;
-    padding-left: 20px;
-  }
-  
-  .sidebar a {
-    color: #003366;
-    text-decoration: none;
-  }
-  
-  .content {
-    padding: 20px;
-    vertical-align: top;
-  }
-  
-  .retro-button {
-    background: linear-gradient(to top, #3399ff, #66ccff);
-    border: 2px outset #003366;
-    color: white;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-family: Tahoma, Verdana, sans-serif;
-    cursor: pointer;
-    border-radius: 6px;
-    box-shadow: 2px 2px 5px #888;
-  }
-  
-  .retro-button:hover {
-    background: linear-gradient(to bottom, #66ccff, #3399ff);
-  }
-  
-  footer {
-    text-align: center;
-    background-color: #e0f5ff;
-    padding: 10px;
-    font-size: 0.9em;
-    color: #003366;
-    border-top: 1px solid #88bdda;
-  }
-  
+  background: #000 url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/starfield.png') repeat;
+  background-size: cover;
+  font-family: Verdana, Arial, sans-serif;
+  color: #cceeff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Deixa o container translúcido e com um leve brilho */
+.container {
+  width: 80%;
+  margin: auto;
+  background-color: rgba(10, 10, 30, 0.8);
+  border: 1px solid #446688;
+  box-shadow: 0 0 15px #00ffee;
+  color: #cceeff;
+}
+
+/* Banner */
+header img {
+  width: 100%;
+  border-bottom: 2px solid #00ffee;
+}
+
+/* Navbar com degrade futurista */
+.navbar {
+  background: linear-gradient(to right, #001f3f, #004466);
+  border-bottom: 2px solid #00ffee;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #00ffee;
+  font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  background-color: rgba(20, 20, 50, 0.8);
+  padding: 15px;
+  vertical-align: top;
+  border-right: 1px solid #00ffee;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  color: #00ffee;
+}
+
+.sidebar a {
+  color: #88e0ff;
+  text-decoration: none;
+}
+
+/* Conteúdo principal */
+.content {
+  padding: 20px;
+  vertical-align: top;
+}
+
+.content h2 {
+  color: #00ffee;
+}
+
+/* Botão retro neon */
+.retro-button {
+  background: linear-gradient(to top, #00ffee, #66ffff);
+  border: 2px outset #004466;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: Tahoma, Verdana, sans-serif;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #00ffee, 2px 2px 5px #000;
+}
+
+.retro-button:hover {
+  background: linear-gradient(to bottom, #66ffff, #00ffee);
+  box-shadow: 0 0 15px #00ffee, 2px 2px 10px #000;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  background-color: rgba(0, 20, 40, 0.9);
+  padding: 10px;
+  font-size: 0.9em;
+  color: #88e0ff;
+  border-top: 1px solid #00ffee;
+}
