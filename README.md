@@ -100,7 +100,7 @@ Fale com nossa central interplanetária:
 
 ---
 
-> _Space Uay™ - O futuro da moradia está logo ali no MekiMeki._  
+> _Space Uay™ - O futuro da moradia está logo ali no MakiMaki._  
 > “2000 was the future. 2025 is retro.”
 
 ---
