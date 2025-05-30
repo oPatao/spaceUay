@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Introdução
+## 🚀 ![text (1)](https://github.com/user-attachments/assets/3c5feff1-e9d8-4ac8-8513-9fcee9e42a52)
 
 O **Space Uay** é uma plataforma fictícia que simula a venda de casas em exoplanetas e passagens aeroespaciais — tudo com o charme tecnológico dos anos 2000.  
 
