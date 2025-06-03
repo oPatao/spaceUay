@@ -86,6 +86,70 @@ header img {
   box-shadow: 0 0 15px #00ffee, 2px 2px 10px #000;
 }
 
+/* Cards para o catálogo */
+.catalogo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: rgba(20, 20, 40, 0.9);
+  padding: 15px;
+  border: 1px solid #00ffee;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffee;
+  color: #cceeff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Formulário de login */
+.login-form {
+  max-width: 400px;
+  margin: auto;
+  background-color: rgba(20, 20, 40, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #00ffee;
+  box-shadow: 0 0 10px #00ffee;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #00ffee;
+  border-radius: 5px;
+  background-color: #000;
+  color: #cceeff;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #00ffee;
+  border-radius: 5px;
+  background-color: #000;
+  color: #cceeff;
+  font-family: Verdana, Arial, sans-serif;
+  resize: vertical;
+}
+
+.imgAnuncio img{
+  display: flex;
+  max-width: 100%;
+  cursor: pointer;
+}
+
 /* Rodapé */
 footer {
   text-align: center;
@@ -95,3 +159,5 @@ footer {
   color: #88e0ff;
   border-top: 1px solid #00ffee;
 }
+
+
