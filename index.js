@@ -6,20 +6,25 @@ const session = require('express-session');  // cria a sessão do usuário, ela 
 const Sequelize = require('sequelize'); // importa o sequelize, que é o ORM que vamos usar para manipular o banco de dados
 const { setEngine } = require('crypto');
 
-app.engine('mustache', mustacheExpress()); // define o motor de renderização das views como mustache
-app.set('view engine', 'html');
-app.set('views', path.join(__dirname, 'views')); // define o diretório das views
-
-//const sequelize = new Sequelize('sqlite::memory:');
-
-
-
-
 const app = express();
+
+
+
+app.engine('html', mustacheExpress()); // define o motor de renderização das views como mustache
+app.set('view engine', 'html');
+app.set('views', path.join(__dirname, './src/views')); // define o diretório das views
+
+app.use(express.static(path.join(__dirname, 'src/public')));
+app.use(bodyParser.urlencoded({ extended: true })); // permite que o body-parser entenda os dados do formulário
+app.use(bodyParser.json()); // permite que o body-parser entenda os dados do json
+
+
 const port = 3000;
 
+
+
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.render('index.html');
 });
 
 app.listen(port, () => {
