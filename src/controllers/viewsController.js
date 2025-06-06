@@ -8,7 +8,16 @@ function editorialView(req, res) {
   res.render('editorial');
 }
 
+function loginView(req, res) {
+  res.render('login');
+}
+function registroView(req, res) {
+  res.render('cadastro');
+}
+
 module.exports = {
   indexView,
-  editorialView
+  editorialView,
+  loginView,
+  registroView
 };

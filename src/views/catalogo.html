@@ -44,6 +44,16 @@
       <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
     </footer>
     
+    <script type="module" src="/componentToast.js"></script>
+    <script type="module">
+      import showToast from '../public/componentToast.js';
+
+      if (params.get('registro') === 'erro') {
+        showToast('Erro ao cadastrar usuário. Tente novamente.', 'error');
+      } else if (params.get('registro') === 'sucesso') {
+        showToast('Usuário cadastrado com sucesso!', 'success');
+      }
+    </script>
   </div>
 
 </body>
