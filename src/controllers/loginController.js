@@ -1,4 +1,5 @@
-const {Usuario, validarSenha} = require('../models/usuario');
+// filepath: c:\Users\ghopp\OneDrive\Documentos\teste de software\spaceuai\spaceUay\src\controllers\loginController.js
+const {Usuario} = require('../models/usuario');
 
 
 exports.registro = async (req, res) => {
@@ -14,7 +15,7 @@ exports.registro = async (req, res) => {
     const novoUsuario = await Usuario.create({ nome, email, senha });
     req.session.usuarioId = novoUsuario.id;
 
-    return res.redirect('/cadastro?registro=sucesso'); // Redireciona para a página inicial após o registro bem-sucedido
+    return res.redirect('/cadastroSucesso'); // Redireciona para a página inicial após o registro bem-sucedido
 
   } catch (error) {
     console.error('Erro ao registrar usuário:', error);
@@ -40,7 +41,7 @@ exports.login = async (req, res) => {
     }
 
     req.session.usuarioId = usuario.id;
-    return res.json({ message: 'Login realizado com sucesso' });
+    return res.redirect('/loginSucesso'); // Redireciona para a página de sucesso após o login bem-sucedido
   } catch (error) {
     console.error('Erro ao realizar login:', error);
     return res.status(500).json({ message: 'Erro interno do servidor' });
