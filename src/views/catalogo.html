@@ -1,3 +1,4 @@
+<!-- filepath: g:\uai sô\spaceUay\src\views\catalogo.html -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -25,28 +26,30 @@
     <main class="content">
       <h2>🚀 Imóveis Disponíveis</h2>
       <section class="catalogo-grid">
+        {{#anuncios}}
         <div class="card">
-          <img src="https://via.placeholder.com/250x150.png?text=Kepler-22b" alt="Kepler-22b">
-          <h3>Casa em Kepler-22b</h3>
-          <p>Vista para três sóis, gravidade artificial, internet 1Gbps.</p>
+          <img src="https://via.placeholder.com/250x150.png?text={{titulo}}" alt="{{titulo}}">
+          <h3>{{titulo}}</h3>
+          <p>{{descricao}}</p>
+          <p>Planeta: {{planeta}}</p>
+          <p>Preço: {{preco}}</p>
+          <p>Anunciado por: {{usuario.nome}}</p>
           <button class="retro-button">Detalhes</button>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/250x150.png?text=Gliese+581g" alt="Gliese 581g">
-          <h3>Loft em Gliese 581g</h3>
-          <p>Compacto, elegante e com atmosfera respirável.</p>
-          <button class="retro-button">Detalhes</button>
-        </div>
+        {{/anuncios}}
       </section>
     </main>
 
     <footer>
       <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
     </footer>
-    
+
     <script type="module" src="/componentToast.js"></script>
     <script type="module">
       import showToast from '../public/componentToast.js';
+
+      // Get the URL parameters
+      const params = new URLSearchParams(window.location.search);
 
       if (params.get('registro') === 'erro') {
         showToast('Erro ao cadastrar usuário. Tente novamente.', 'error');

@@ -38,10 +38,30 @@ Usuario.init({
 
 sequelize.sync()
   .then(() => {
-    console.log('Banco de dados sincronizado com sucesso!');
+    console.log('Banco de dados usuario sincronizado com sucesso!');
   })
   .catch((error) => {
     console.error('Erro ao sincronizar o banco de dados:', error);
   });
 
 module.exports = { sequelize, Usuario };
+
+const { Anuncio } = require('./anuncios'); // Import the Anuncio model
+
+Usuario.hasMany(Anuncio, {
+  foreignKey: 'usuarioId',
+  as: 'anuncios' // Alias for the association
+});
+
+Anuncio.belongsTo(Usuario, {
+  foreignKey: 'usuarioId',
+  as: 'usuario' // Alias for the association
+});
+
+sequelize.sync()
+  .then(() => {
+    console.log('Banco de dados anuncios sincronizado com sucesso!');
+  })
+  .catch((error) => {
+    console.error('Erro ao sincronizar o banco de dados:', error);
+  });
