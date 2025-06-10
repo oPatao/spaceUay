@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, 'src/public')));
 app.use(bodyParser.urlencoded({ extended: true })); // permite que o body-parser entenda os dados do formulário
 app.use(bodyParser.json()); // permite que o body-parser entenda os dados do json
 
+app.use(express.urlencoded({extended: true}));
+
 
 const port = 3000;
 
