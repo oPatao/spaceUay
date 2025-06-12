@@ -1,0 +1,78 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho - Space Uay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <header>
+      <img src="https://via.placeholder.com/728x90.png?text=Seu+Carrinho+Espacial" alt="Banner Carrinho">
+    </header>
+    <nav class="navbar">
+      <img src="/spaceUay/img/logo.gif" alt="Logo">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <main class="content">
+      <h2>🛒 Seu Carrinho Galáctico</h2>
+      <table class="carrinho-tabela">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Planeta</th>
+            <th>Preço</th>
+            <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody id="carrinho-itens">
+          <!-- Itens serão inseridos dinamicamente -->
+        </tbody>
+      </table>
+      <div class="carrinho-total">
+        <p><strong>Total:</strong> 820.000 Créditos Galácticos</p>
+        <button class="retro-button">Finalizar Compra</button>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
+    </footer>
+  </div>
+<script>
+  const carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+  function renderizarCarrinho() {
+    const tbody = document.getElementById('carrinho-itens');
+    const totalEl = document.querySelector('.carrinho-total p');
+    tbody.innerHTML = '';
+    let total = 0;
+
+    carrinhoItens.forEach((item, index) => {
+      total += item.preco;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${item.nome}</td>
+        <td>${item.planeta}</td>
+        <td>${item.preco.toLocaleString('pt-BR')} CG</td>
+        <td><button class="retro-button" onclick="removerItem(${index})">X</button></td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    totalEl.innerHTML = `<strong>Total:</strong> ${total.toLocaleString('pt-BR')} Créditos Galácticos`;
+  }
+
+  function removerItem(index) {
+    carrinhoItens.splice(index, 1);
+    localStorage.setItem('carrinho', JSON.stringify(carrinhoItens));
+    renderizarCarrinho();
+  }
+
+  renderizarCarrinho();
+</script>
+</body>
+</html>

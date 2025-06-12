@@ -30,6 +30,10 @@ function anuncioView(req, res) {
   res.render('anuncio');
 }
 
+function carrinhoView(req, res) {
+  res.render('carrinho');
+}  
+
 async function catalogoView(req, res) {
   try {
     const anuncios = await Anuncio.findAll({
@@ -55,5 +59,6 @@ module.exports = {
   loginSuccessView,
   cadastroSuccessView,
   anuncioView,
-  catalogoView
+  catalogoView,
+  carrinhoView
 };
