@@ -11,11 +11,14 @@
       <img src="https://via.placeholder.com/728x90.png?text=Seu+Carrinho+Espacial" alt="Banner Carrinho">
     </header>
     <nav class="navbar">
-      <img src="/spaceUay/img/logo.gif" alt="Logo">
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="carrinho.html">Carrinho</a>
-      <a href="login.html">Login</a>
+      <img src="/img/logo.gif" alt="Logo">
+      <a href="/">Início</a>
+      <a href="/catalogo">Catálogo</a>
+      <a href="/login">Login</a>
+      <a href="/cadastro">Cadastrar</a>
+      <a href="/anuncio">Anuncie</a>
+      <a href="/editorial">Editorial</a>
+      <a href="/carrinho">Carrinho</a>
     </nav>
     <main class="content">
       <h2>🛒 Seu Carrinho Galáctico</h2>
@@ -29,11 +32,26 @@
           </tr>
         </thead>
         <tbody id="carrinho-itens">
-          <!-- Itens serão inseridos dinamicamente -->
+          {{#itens}}
+            <tr>
+              <td>{{anuncio.titulo}}</td>
+              <td>{{anuncio.planeta}}</td>
+              <td>{{anuncio.preco}} CG</td>
+              <td>
+                <form action="/carrinho/remover" method="POST" style="display:inline;">
+                  <input type="hidden" name="anuncioId" value="{{anuncio.id}}">
+                  <button class="retro-button" type="submit">X</button>
+                </form>
+              </td>
+            </tr>
+          {{/itens}}
+          {{^itens}}
+          <tr><td colspan="4">Seu carrinho está vazio.</td></tr>
+          {{/itens}}
         </tbody>
       </table>
       <div class="carrinho-total">
-        <p><strong>Total:</strong> 820.000 Créditos Galácticos</p>
+        <p><strong>Total:</strong> {{total}} Créditos Galácticos</p>
         <button class="retro-button">Finalizar Compra</button>
       </div>
     </main>
@@ -41,38 +59,5 @@
       <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
     </footer>
   </div>
-<script>
-  const carrinhoItens = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-  function renderizarCarrinho() {
-    const tbody = document.getElementById('carrinho-itens');
-    const totalEl = document.querySelector('.carrinho-total p');
-    tbody.innerHTML = '';
-    let total = 0;
-
-    carrinhoItens.forEach((item, index) => {
-      total += item.preco;
-
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${item.nome}</td>
-        <td>${item.planeta}</td>
-        <td>${item.preco.toLocaleString('pt-BR')} CG</td>
-        <td><button class="retro-button" onclick="removerItem(${index})">X</button></td>
-      `;
-      tbody.appendChild(tr);
-    });
-
-    totalEl.innerHTML = `<strong>Total:</strong> ${total.toLocaleString('pt-BR')} Créditos Galácticos`;
-  }
-
-  function removerItem(index) {
-    carrinhoItens.splice(index, 1);
-    localStorage.setItem('carrinho', JSON.stringify(carrinhoItens));
-    renderizarCarrinho();
-  }
-
-  renderizarCarrinho();
-</script>
 </body>
 </html>
