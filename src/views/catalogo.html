@@ -15,12 +15,14 @@
     </header>
 
     <nav class="navbar">
-      <img src="/spaceUay/img/logo.gif" alt="Logo">
+      <img src="/img/logo.gif" alt="Logo">
       <a href="/">Início</a>
       <a href="/catalogo">Catálogo</a>
       <a href="/login">Login</a>
+      <a href="/cadastro">Cadastrar</a>
       <a href="/anuncio">Anuncie</a>
       <a href="/editorial">Editorial</a>
+      <a href="/carrinho">Carrinho</a>
     </nav>
 
     <main class="content">
@@ -34,6 +36,7 @@
           <p>Planeta: {{planeta}}</p>
           <p>Preço: {{preco}}</p>
           <p>Anunciado por: {{usuario.nome}}</p>
+          <button class="retro-button" onclick="adicionarAoCarrinho('{{id}}')">Adicionar ao Carrinho</button>
           <button class="retro-button">Detalhes</button>
         </div>
         {{/anuncios}}
@@ -44,19 +47,24 @@
       <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
     </footer>
 
-    <script type="module" src="/componentToast.js"></script>
-    <script type="module">
-      import showToast from '../public/componentToast.js';
-
-      // Get the URL parameters
-      const params = new URLSearchParams(window.location.search);
-
-      if (params.get('registro') === 'erro') {
-        showToast('Erro ao cadastrar usuário. Tente novamente.', 'error');
-      } else if (params.get('registro') === 'sucesso') {
-        showToast('Usuário cadastrado com sucesso!', 'success');
-      }
-    </script>
+    <script>
+    function adicionarAoCarrinho(anuncioId) {
+      fetch('/carrinho/adicionar', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ anuncioId })
+  })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message); 
+    })
+    .catch(error => {
+      alert('Erro ao adicionar ao carrinho');
+    });
+  }
+  </script>
   </div>
 
 </body>

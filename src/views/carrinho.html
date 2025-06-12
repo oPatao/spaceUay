@@ -1,0 +1,63 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho - Space Uay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <header>
+      <img src="https://via.placeholder.com/728x90.png?text=Seu+Carrinho+Espacial" alt="Banner Carrinho">
+    </header>
+    <nav class="navbar">
+      <img src="/img/logo.gif" alt="Logo">
+      <a href="/">Início</a>
+      <a href="/catalogo">Catálogo</a>
+      <a href="/login">Login</a>
+      <a href="/cadastro">Cadastrar</a>
+      <a href="/anuncio">Anuncie</a>
+      <a href="/editorial">Editorial</a>
+      <a href="/carrinho">Carrinho</a>
+    </nav>
+    <main class="content">
+      <h2>🛒 Seu Carrinho Galáctico</h2>
+      <table class="carrinho-tabela">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Planeta</th>
+            <th>Preço</th>
+            <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody id="carrinho-itens">
+          {{#itens}}
+            <tr>
+              <td>{{anuncio.titulo}}</td>
+              <td>{{anuncio.planeta}}</td>
+              <td>{{anuncio.preco}} CG</td>
+              <td>
+                <form action="/carrinho/remover" method="POST" style="display:inline;">
+                  <input type="hidden" name="anuncioId" value="{{anuncio.id}}">
+                  <button class="retro-button" type="submit">X</button>
+                </form>
+              </td>
+            </tr>
+          {{/itens}}
+          {{^itens}}
+          <tr><td colspan="4">Seu carrinho está vazio.</td></tr>
+          {{/itens}}
+        </tbody>
+      </table>
+      <div class="carrinho-total">
+        <p><strong>Total:</strong> {{total}} Créditos Galácticos</p>
+        <button class="retro-button">Finalizar Compra</button>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
+    </footer>
+  </div>
+</body>
+</html>

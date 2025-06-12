@@ -5,6 +5,7 @@ const bodyParser = require('body-parser'); // ele faz a ligação dos formulario
 const session = require('express-session');  // cria a sessão do usuário, ela meio que manterá o usuário logado
 const Sequelize = require('sequelize'); // importa o sequelize, que é o ORM que vamos usar para manipular o banco de dados
 const { setEngine } = require('crypto');
+require('./src/models/associacoes');
 
 
 const app = express();

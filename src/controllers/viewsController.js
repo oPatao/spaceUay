@@ -1,4 +1,5 @@
 const e = require("express");
+const { Anuncio } = require('../models/anuncios');
 
 function indexView(req, res) {
   res.render('index');
@@ -16,19 +17,17 @@ function registroView(req, res) {
 }
 function loginSuccessView(req, res) {
   res.render('loginSucesso');
-  setTimeout(() => {
-    res.redirect('/');
-    }, 3000);
 }
 function cadastroSuccessView(req, res) {
   res.render('cadastroSucesso');
-  setTimeout(() => {
-    res.redirect('/');
-    }, 3000);
 }
-function anuncioView(req, res) {
+/*function anuncioView(req, res) {
   res.render('anuncio');
 }
+
+function carrinhoView(req, res) {
+  res.render('carrinho');
+}  */
 
 async function catalogoView(req, res) {
   try {
@@ -54,6 +53,5 @@ module.exports = {
   registroView,
   loginSuccessView,
   cadastroSuccessView,
-  anuncioView,
   catalogoView
 };
