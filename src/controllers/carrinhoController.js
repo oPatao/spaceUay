@@ -27,7 +27,7 @@ exports.adicionarAoCarrinho = async (req, res) => {
     await Carrinho.create({ usuarioId, anuncioId });
     res.json({ message: 'Adicionado ao carrinho!' });
   } catch (error) {
-    alert('Erro ao adicionar ao carrinho');
+    res.status(500).json({ message: 'Erro ao adicionar ao carrinho' });
   }
 };
 
