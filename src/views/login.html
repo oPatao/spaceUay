@@ -38,12 +38,44 @@
       </form>
     </main>
 
+
     <footer>
       <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
     </footer>
 
   </div>
 
+  <script>
+    // Exemplo de script para manipulação de eventos ou validação
+    document.querySelector('.login-form').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      if (!email || !senha) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha })
+      });
+
+      // Se o backend redirecionar, faça o redirecionamento manualmente
+      if (response.redirected) {
+        window.location.href = response.url;
+        return;
+      }
+
+      const data = await response.json();
+      if (data.message) {
+        alert(data.message);
+      }
+    });
+
+  </script>
 </body>
 
 </html>

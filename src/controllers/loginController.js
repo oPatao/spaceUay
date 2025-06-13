@@ -1,4 +1,3 @@
-// filepath: c:\Users\ghopp\OneDrive\Documentos\teste de software\spaceuai\spaceUay\src\controllers\loginController.js
 const {Usuario} = require('../models/usuario');
 
 
@@ -15,7 +14,7 @@ exports.registro = async (req, res) => {
     const novoUsuario = await Usuario.create({ nome, email, senha });
     req.session.usuarioId = novoUsuario.id;
 
-    return res.redirect('/cadastroSucesso'); // Redireciona para a página inicial após o registro bem-sucedido
+    return res.redirect('/cadastroSucesso');
 
   } catch (error) {
     console.error('Erro ao registrar usuário:', error);

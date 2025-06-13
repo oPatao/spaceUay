@@ -42,5 +42,31 @@
       <p>&copy; 2005 - 2025 Space Uay Intergalactic Real Estate</p>
     </footer>
   </div>
+  <script>
+    document.querySelector('.login-form').addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const titulo = document.getElementById('titulo').value;
+      const descricao = document.getElementById('descricao').value;
+      const planeta = document.getElementById('planeta').value;
+      const preco = document.getElementById('preco').value;
+
+      if (!titulo || !descricao || !planeta || !preco) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      const response = await fetch('/anuncio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ titulo, descricao, planeta, preco })
+      });
+
+      const data = await response.json();
+      alert(data.message);
+    });
+    </Script>
 </body>
 </html>
