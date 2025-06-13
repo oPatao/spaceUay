@@ -149,6 +149,16 @@ textarea {
   max-width: 100%;
   cursor: pointer;
 }
+.imagemIndex {
+  border-radius: 25px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: auto;
+  width: 40vmin;
+  margin: 20px 0;
+  padding: 20px;
+}
 
 /* Rodapé */
 footer {
